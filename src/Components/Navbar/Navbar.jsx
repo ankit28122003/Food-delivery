@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Navbar.css'
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
 
@@ -9,12 +10,43 @@ const Navbar = () => {
     return (
         <div className='navbar'>
             <img src={assets.logo} alt="" className="logo" />
-            <ul className="navbar-menu">
-                <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
-                <a href='explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Menu</a>
-                <a href='#app-download' onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>Mobile app</a>
-                <a href='#footer' onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact Us</a>
-            </ul>
+            <div className="navbar-menu">
+                <Link to='/' onClick={() => setMenu("home")} className={`navbar-link ${menu === "home" ? "active" : ""}`}>Home</Link>
+
+                <ScrollLink
+                    to="explore-menu"
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    onClick={() => setMenu("menu")}
+                    className={`navbar-link ${menu === "menu" ? "active" : ""}`}
+                >
+                    Menu
+                </ScrollLink>
+
+                <ScrollLink
+                    to="app-download"
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    onClick={() => setMenu("mobile-app")}
+                    className={`navbar-link ${menu === "mobile-app" ? "active" : ""}`}
+                >
+                    Mobile App
+                </ScrollLink>
+
+                <ScrollLink
+                    to="footer"
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    onClick={() => setMenu("contact-us")}
+                    className={`navbar-link ${menu === "contact-us" ? "active" : ""}`}
+                >
+                    Contact Us
+                </ScrollLink>
+            </div>
+
 
             <div className="navbar-right">
                 <img src={assets.search_icon} alt="" />

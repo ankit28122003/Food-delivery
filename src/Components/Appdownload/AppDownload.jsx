@@ -18,4 +18,3 @@ const AppDownload = () => {
 export default AppDownload
 
 
-// 2hr 14min

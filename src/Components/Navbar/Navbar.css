@@ -49,6 +49,20 @@
     cursor: pointer;
 }
 
+.navbar-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.navbar-link:hover {
+    color: #ff6347;
+}
+
+
+
+
 .navbar-search-icon {
     position: relative;
 
@@ -117,6 +131,6 @@
 
 
     .navbar-menu {
-       display: none;
+        display: none;
     }
 }
