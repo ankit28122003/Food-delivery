@@ -4,7 +4,7 @@ import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 
-const Navbar = () => {
+const Navbar = ({ setShowLogin }) => {
 
     const [menu, setMenu] = useState("home");
     return (
@@ -54,7 +54,7 @@ const Navbar = () => {
                     <img src={assets.basket_icon} alt="" />
                     <div className="dot"></div>
                 </div>
-                <button>Sign in</button>
+                <button onClick={() => setShowLogin(true)}>Sign in</button>
             </div>
 
         </div>
